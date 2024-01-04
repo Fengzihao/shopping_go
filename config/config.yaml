@@ -1,0 +1,11 @@
+Env: "dev"
+
+DatabaseSettings:
+  DatabaseURI: "root:123456@tcp(192.168.137.128:3306)/shopping?parseTime=True&loc=Local"
+  DatabaseName: "shopping"
+  Username: "root"
+  Password: "123456"
+
+
+JwtSettings:
+  SecretKey: "shopping.com"
