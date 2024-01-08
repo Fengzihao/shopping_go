@@ -17,7 +17,7 @@ func NewCategoryRepository(db *gorm.DB) *Repository {
 
 // Migration 生成商品分类数据库表
 func (r *Repository) Migration() {
-	err := r.db.AutoMigrate(&Repository{})
+	err := r.db.AutoMigrate(&Category{})
 	if err != nil {
 		log.Print(err)
 	}
