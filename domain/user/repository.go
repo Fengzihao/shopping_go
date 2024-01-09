@@ -34,7 +34,7 @@ func (r *Repository) Create(u *User) error {
 // GetByName 根据名称查找用户
 func (r *Repository) GetByName(name string) (User, error) {
 	var user User
-	tx := r.db.Where(" Username=? and IsDeleted = ?", name, 0).Scan(&user)
+	tx := r.db.Where(" Username=? and IsDeleted = ?", name, false).Find(&user)
 	if tx.Error != nil {
 		return User{}, tx.Error
 	}

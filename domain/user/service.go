@@ -44,7 +44,7 @@ func (c *Service) GetUser(username string, password string) (User, error) {
 	if err != nil {
 		return User{}, err
 	}
-	passwordHash := hash.CheckPasswordHash(password+user.Salt, password)
+	passwordHash := hash.CheckPasswordHash(password+user.Salt, user.Password)
 	if !passwordHash {
 		return User{}, err
 	}
@@ -53,5 +53,5 @@ func (c *Service) GetUser(username string, password string) (User, error) {
 
 // UpdateUser 更新用户数据
 func (c *Service) UpdateUser(user *User) error {
-	return c.UpdateUser(user)
+	return c.r.Update(user)
 }

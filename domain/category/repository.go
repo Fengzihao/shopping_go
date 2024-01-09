@@ -46,7 +46,7 @@ func (r *Repository) Create(category *Category) error {
 // GetByName 根据名称查询商品分类数据
 func (r *Repository) GetByName(name string) []Category {
 	var categories []Category
-	err := r.db.Where("Name=?", name).Scan(&categories)
+	err := r.db.Where("Name=?", name).Find(&categories)
 	if err != nil {
 		return nil
 	}
