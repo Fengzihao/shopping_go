@@ -71,7 +71,7 @@ func (c *Controller) UpdateItem(g *gin.Context) {
 }
 
 // GetCart
-// @Summary 获得购物车商品列表
+// @Summary 获取购物车商品列表
 // @Tags Cart
 // @Accept json
 // @Produce json
